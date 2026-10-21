@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <header>
+        <nav>
+            <h1>Juan Carlos Galvez</h1>
+            <ul class="barra_ul">
+                <li><a href="#Home">Inicio</a></li>
+                <li><a href="#about">Sobre mi</a></li>
+                <li><a href="#projects">Proyectos</a></li>
+                <li><a href="#skills">Habilidades</a></li>
+                <li><a href="#contact">Contacto</a></li>
+            </ul>
+        </nav>
+        <section class="titular" id="Home">
+            <div class="comentario">
+                <p>Desarrollador Full Stack</p>
+                <span>Apasionado por la tecnología y la programación, siempre en busca de nuevos desafíos y
+                    oportunidades para crecer profesionalmente.</span>
+            </div>
+        </section>
+        <section class="info_dato" id="about">
+            <img src="mifoto.jpeg" alt="Juan Carlos" class="foto">
+            <div class="mensaje">
+                <h2>Sobre mi</h2>
+                
+                    <p>Soy un desarrollador full stack apasionado por la tecnología y la programación. Tengo experiencia
+                        en el desarrollo de aplicaciones web y móviles, y siempre estoy buscando nuevas formas de
+                        mejorar mis habilidades y conocimientos.</p>
+            </div>
+
+        </section>
+
+        <section id="projects" class="proyectos_v1">
+            <h2>Proyectos</h2>
+            <p>Lista de proyectos destacados.</p>
+            <div class="proyectos">
+                <div class="proyecto">
+                    <img src="proyecto.jpg" alt="Juan Carlos" class="foto">
+                    <h3><a href="https://github.com/juancarlosgalvez/Inventarios-">Ver Codigo</a></h3>
+                    <p>Aplicacion de Inventarios con Python.</p>
+                </div>
+                <div class="proyecto">
+                    <img src="proye2.jpg" alt="Juan Carlos" class="foto">
+                    <h3><a href="https://github.com/juancarlosgalvez/Mi-Negocio">Ver Codigo</a></h3>
+                    <p>Pagina Web de Ventas para negocio.</p>
+                </div>
+                <div class="proyecto">
+                    <img src="pro3.jpg" alt="Juan Carlos" class="foto">
+                    <h3><a href="https://hoyaprendo.com/curso/curso-veo-3-videos-ia/clases">Ver Codigo</a></h3>
+                    <p>Descripción del proyecto 3.</p>
+                </div>
+                <div class="proyecto">
+                    <img src="proye4.jpg" alt="Juan Carlos" class="foto">
+                    <h3><a href="">Ver Codigo</a></h3>
+                    <p>Descripción del proyecto 4.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="skills" class="list_h">
+            <h2>Habilidades</h2>
+            <p>Lista de habilidades técnicas.</p>
+            <ul class="habilidades">
+                <li>HTML</li>
+                <li>CSS</li>
+                <li>JavaScript</li>
+                <li>React</li>
+                <li>Node.js</li>
+                <li>Python</li>
+                <li>SQL</li>
+            </ul>
+        </section>
+        <section id="contact" class="contacto">
+            <h2>Contacto</h2>
+            <p>Formulario de contacto.</p>
+            <form action="#" method="post" class="formulario">
+                <label for="name">Nombre:</label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="email">Correo electrónico:</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="message">Mensaje:</label>
+                <textarea id="message" name="message" required></textarea>
+
+                <button type="submit">Enviar</button>
+            </form>
+
+        </section>
+        <footer>
+            <p>&copy; 2023 Juan Carlos Galvez. Todos los derechos reservados.</p>
+        </footer>
+
+        <script src="script.js"></script>
+
+    </header>
+</body>
+
+</html>

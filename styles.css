@@ -1,0 +1,568 @@
+@import url('https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap');
+
+:root {
+    --navy-deep: #070a1f;
+    --navy-mid: #0c1338;
+    --blue-electric: #2a49e8;
+    --violet: #8a1fc9;
+    --magenta: #e0106f;
+    --ember: #e8351f;
+
+    --ink: #f4f5fb;
+    --muted: #a9adc9;
+    --muted-dim: #6a6f94;
+
+    --glass: rgba(244, 245, 251, 0.05);
+    --glass-border: rgba(244, 245, 251, 0.12);
+    --glow-border: rgba(224, 16, 111, 0.45);
+
+    --font-display: 'Sora', sans-serif;
+    --font-body: 'Inter', sans-serif;
+    --font-mono: 'JetBrains Mono', monospace;
+
+    --radius-lg: 24px;
+    --radius-md: 16px;
+    --radius-sm: 10px;
+
+    --ease: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-body);
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    min-height: 100%;
+    font-size: 16px;
+    color: var(--ink);
+    background-color: var(--navy-deep);
+    background-image:
+        linear-gradient(135deg,
+            rgba(150, 8, 245, 0.88) 0%,
+            rgba(42, 22, 110, 0.72) 40%,
+            rgba(180, 10, 89, 0.475) 68%,
+            rgba(210, 39, 30, 0.386) 100%),
+        url(fondo.jpg);
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    line-height: 1.5;
+}
+
+a {
+    color: inherit;
+}
+
+/* ---------------- Headings ---------------- */
+
+h1 {
+    font-family: var(--font-display);
+    font-size: 28px;
+    font-weight: 700;
+    margin: 0;
+    padding: 0;
+    letter-spacing: -0.01em;
+}
+
+h2 {
+    font-family: var(--font-display);
+    font-weight: 700;
+    letter-spacing: -0.01em;
+}
+
+/* ---------------- Nav ---------------- */
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 22px clamp(20px, 5vw, 60px);
+    margin: 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    -webkit-backdrop-filter: blur(14px);
+    backdrop-filter: blur(14px);
+    background: rgba(7, 10, 31, 0.55);
+    border-bottom: 1px solid var(--glass-border);
+}
+
+nav ul.barra_ul {
+    display: flex;
+    justify-content: flex-end;
+    gap: 6px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    font-size: 14px;
+}
+
+nav ul.barra_ul li {
+    background-color: transparent;
+    color: var(--muted);
+    padding: 6px 4px;
+    border-radius: 0;
+    font-weight: 500;
+}
+
+nav ul.barra_ul li a {
+    font-family: var(--font-mono);
+    text-decoration: none;
+    color: var(--muted);
+    font-size: 13px;
+    padding: 8px 16px;
+    border-radius: 999px;
+    transition: color 0.3s var(--ease), background 0.3s var(--ease);
+    position: relative;
+}
+
+nav ul.barra_ul li a::before {
+    content: '>';
+    opacity: 0;
+    margin-right: 4px;
+    color: var(--magenta);
+    transition: opacity 0.25s var(--ease);
+}
+
+nav ul.barra_ul li a:hover,
+nav ul.barra_ul li a.active {
+    color: var(--ink);
+    background: var(--glass);
+}
+
+nav ul.barra_ul li a:hover::before,
+nav ul.barra_ul li a.active::before {
+    opacity: 1;
+}
+
+/* ---------------- Hero / Titular ---------------- */
+
+.titular {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 110px 20px 90px;
+    min-height: 60vh;
+}
+
+.titular .comentario {
+    border: 1px solid var(--glass-border);
+    background: var(--glass);
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    padding: 48px 56px;
+    border-radius: var(--radius-lg);
+    max-width: 640px;
+    box-shadow: 0 30px 80px -30px rgba(0, 0, 0, 0.6);
+}
+
+.titular .comentario p {
+    font-family: var(--font-mono);
+    text-align: center;
+    margin: 0 0 16px;
+    font-size: 13px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--magenta);
+}
+
+.titular .comentario span {
+    display: block;
+    font-size: 17px;
+    line-height: 1.65;
+    color: var(--muted);
+}
+
+/* ---------------- About ---------------- */
+
+.info_dato {
+    display: flex;
+    align-items: center;
+    text-align: left;
+    gap: 48px;
+    padding: 60px clamp(20px, 8vw, 100px);
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.foto {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    flex-shrink: 0;
+    border: 3px solid var(--glass-border);
+    box-shadow: 0 0 0 6px rgba(224, 16, 111, 0.12);
+}
+
+.mensaje {
+    flex: 1;
+}
+
+.mensaje h2 {
+    margin-top: 0;
+    font-size: 30px;
+    margin-bottom: 14px;
+}
+
+.mensaje p {
+    color: var(--muted);
+    font-size: 16px;
+    line-height: 1.7;
+    margin: 0;
+}
+
+/* ---------------- Projects ---------------- */
+
+.proyectos_v1 {
+    padding: 70px clamp(20px, 8vw, 100px) 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.proyectos_v1 h2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: auto;
+    height: auto;
+    margin: 0 auto 6px;
+    font-size: 30px;
+}
+
+.proyectos_v1 > p {
+    display: flex;
+    justify-content: center;
+    margin-top: 0;
+    margin-bottom: 40px;
+    color: var(--muted-dim);
+    font-family: var(--font-mono);
+    font-size: 13px;
+    letter-spacing: 0.05em;
+}
+
+.proyectos {
+    display: flex;
+    justify-content: center;
+    gap: 24px;
+    width: 100%;
+    flex-wrap: wrap;
+    perspective: 1000px;
+}
+
+.proyecto {
+    text-align: center;
+    margin-top: 0;
+    flex: 1 1 240px;
+    max-width: 260px;
+    padding: 32px 24px;
+    border-radius: var(--radius-md);
+    background: var(--glass);
+    border: 1px solid var(--glass-border);
+    position: relative;
+    overflow: hidden;
+    transform-style: preserve-3d;
+    will-change: transform;
+    transition: transform 0.15s var(--ease), border-color 0.4s var(--ease), box-shadow 0.4s var(--ease);
+}
+
+.proyecto::before {
+    content: '';
+    position: absolute;
+    inset: -1px;
+    border-radius: inherit;
+    padding: 1px;
+    background: linear-gradient(135deg, var(--blue-electric), var(--magenta), var(--ember));
+    -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+    -webkit-mask-composite: xor;
+    mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+    mask-composite: exclude;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.4s var(--ease);
+}
+
+.proyecto:hover {
+    box-shadow: 0 24px 50px -20px rgba(0, 0, 0, 0.55);
+}
+
+.proyecto:hover::before {
+    opacity: 1;
+}
+
+.proyecto .foto {
+    width: 72px;
+    height: 72px;
+    margin: 0 auto 18px;
+}
+
+.proyecto_link {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+}
+
+.proyecto h3 {
+    font-family: var(--font-display);
+    font-size: 17px;
+    margin: 0 0 8px;
+    text-decoration: none;
+    background: linear-gradient(90deg, var(--blue-electric), var(--magenta));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.proyecto:hover h3 {
+    filter: brightness(1.2);
+}
+
+.proyectos .proyecto p {
+    margin: 0;
+    color: var(--muted);
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+/* ---------------- Skills ---------------- */
+
+.list_h {
+    text-align: center;
+    padding: 60px 20px 80px;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.list_h h2 {
+    font-size: 30px;
+    margin-bottom: 6px;
+}
+
+.list_h > p {
+    color: var(--muted-dim);
+    font-family: var(--font-mono);
+    font-size: 13px;
+    letter-spacing: 0.05em;
+    margin-bottom: 10px;
+}
+
+.habilidades {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 14px;
+    list-style: none;
+    padding: 0;
+    margin: 30px 0 0;
+}
+
+.habilidades li {
+    background: var(--glass);
+    border: 1px solid var(--glass-border);
+    color: var(--ink);
+    padding: 10px 22px;
+    border-radius: 999px;
+    font-family: var(--font-mono);
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 0.02em;
+    transition: border-color 0.3s var(--ease), transform 0.3s var(--ease), background 0.3s var(--ease);
+    position: relative;
+}
+
+.habilidades li::before {
+    content: '●';
+    color: var(--magenta);
+    margin-right: 8px;
+    font-size: 9px;
+    vertical-align: middle;
+}
+
+.habilidades li:hover {
+    transform: translateY(-3px);
+    border-color: var(--glow-border);
+    background: rgba(224, 16, 111, 0.08);
+}
+
+/* ---------------- Contact ---------------- */
+
+.contacto {
+    max-width: 620px;
+    margin: 60px auto 100px;
+    padding: 48px clamp(24px, 5vw, 48px);
+    text-align: center;
+    background: var(--glass);
+    border: 1px solid var(--glass-border);
+    border-radius: var(--radius-lg);
+}
+
+.contacto h2 {
+    font-size: 32px;
+    margin-bottom: 8px;
+}
+
+.contacto > p {
+    margin-bottom: 30px;
+    color: var(--muted);
+    font-size: 15px;
+}
+
+.formulario {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    text-align: left;
+}
+
+.formulario label {
+    font-family: var(--font-mono);
+    font-size: 12px;
+    color: var(--muted-dim);
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    margin-bottom: -8px;
+}
+
+.formulario input,
+.formulario textarea {
+    padding: 14px 16px;
+    border: 1px solid var(--glass-border);
+    border-radius: var(--radius-sm);
+    font-size: 15px;
+    font-family: var(--font-body);
+    outline: none;
+    background: rgba(244, 245, 251, 0.04);
+    color: var(--ink);
+    transition: border-color 0.3s var(--ease), background 0.3s var(--ease);
+}
+
+.formulario input::placeholder,
+.formulario textarea::placeholder {
+    color: var(--muted-dim);
+}
+
+.formulario input:focus,
+.formulario textarea:focus {
+    border-color: var(--magenta);
+    background: rgba(244, 245, 251, 0.07);
+}
+
+.formulario textarea {
+    resize: none;
+    min-height: 120px;
+}
+
+.formulario button {
+    background: linear-gradient(90deg, var(--blue-electric), var(--magenta));
+    color: var(--ink);
+    border: none;
+    padding: 15px;
+    border-radius: var(--radius-sm);
+    font-size: 16px;
+    font-weight: 600;
+    font-family: var(--font-display);
+    cursor: pointer;
+    transition: filter 0.3s var(--ease), transform 0.2s var(--ease);
+}
+
+.formulario button:hover {
+    filter: brightness(1.15);
+    transform: translateY(-2px);
+}
+
+/* ---------------- Footer ---------------- */
+
+footer {
+    text-align: center;
+    padding: 26px 20px;
+    background: rgba(4, 6, 20, 0.6);
+    border-top: 1px solid var(--glass-border);
+    color: var(--muted-dim);
+    font-family: var(--font-mono);
+    font-size: 12px;
+    margin-top: 0;
+}
+
+/* ---------------- Responsive ---------------- */
+
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column;
+        gap: 14px;
+        padding: 18px 20px;
+    }
+
+    nav ul.barra_ul {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 4px;
+    }
+
+    .info_dato {
+        flex-direction: column;
+        text-align: center;
+        gap: 24px;
+    }
+
+    .titular {
+        padding: 90px 16px 60px;
+    }
+
+    .titular .comentario {
+        padding: 32px 28px;
+    }
+
+    .proyectos {
+        gap: 18px;
+    }
+}
+
+/* ---------------- Scroll reveal (driven by script.js) ---------------- */
+
+.reveal {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.7s var(--ease), transform 0.7s var(--ease);
+}
+
+.reveal.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* ---------------- Form status message ---------------- */
+
+.form-status {
+    margin: 4px 0 0;
+    font-family: var(--font-mono);
+    font-size: 13px;
+}
+
+.form-status--ok {
+    color: #5ee6a8;
+}
+
+.form-status--error {
+    color: #ff8a8a;
+}
+
+/* ---------------- Motion preference ---------------- */
+
+@media (prefers-reduced-motion: reduce) {
+    * {
+        transition: none !important;
+        scroll-behavior: auto !important;
+    }
+}
